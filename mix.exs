@@ -4,6 +4,9 @@ defmodule Gslicex.Mixfile do
   def project do
     [app: :gslicex,
      version: "0.0.1",
+     name: 'Gslicex',
+     source_url: "https://github.com/jpmec/gslicex",
+     homepage_url: "https://github.com/jpmec/gslicex",
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
@@ -27,6 +30,7 @@ defmodule Gslicex.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    []
+    [{:earmark, "~> 0.1", only: :dev},
+     {:ex_doc, "~> 0.10", only: :dev}]
   end
 end
