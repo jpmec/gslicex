@@ -1,4 +1,7 @@
 defmodule Gslicex do
+    @moduledoc """
+    Provides generalized slicing functions.
+    """
 
     def gslice([]) do
         []
@@ -12,10 +15,20 @@ defmodule Gslicex do
         []
     end
 
+    @doc """
+    Slice a list by a list of indexes.
+    Returns a list containing the elements at each index.
+    If the index is out of bounds, an empty list is returned.
+    """
     def gslice(list, [index | tail]) do
         gslice(list, index) ++ gslice(list, tail)
     end
 
+    @doc """
+    Slice a list by the index.
+    Returns a list containing a single element at the index.
+    If the index is out of bounds, an empty list is returned.
+    """
     def gslice(list, index) do
         Enum.slice(list, index, 1)
     end
@@ -40,6 +53,10 @@ defmodule Gslicex do
         gslice(list, start, count) ++ gslice(list, tail, count)
     end
 
+    @doc """
+    Slice a list by a start position and a count.
+    This behaves exactly like Enum.slice.
+    """
     def gslice(list, start, count) do
         Enum.slice(list, start, count)
     end
