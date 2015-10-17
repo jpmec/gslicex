@@ -35,4 +35,13 @@ defmodule GslicexTest do
   end
 
 
+  test "gslice with 6 element list and start, count, stride " do
+    assert [1, 2, 4, 5] == Gslicex.gslice(0..6, 1, 2, 1)
+  end
+
+
+  test "gslice with 8 element list and start, counts, strides " do
+    assert [1, 4, 5] == Gslicex.gslice(0..8, 1, [1, 2], [2])
+  end
+
 end
